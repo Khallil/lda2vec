@@ -5,6 +5,7 @@ import pandas as pd
 
 from pyxdameraulevenshtein import damerau_levenshtein_distance_ndarray
 
+
 class Corpus():
     _keys_frequency = None
 
@@ -569,7 +570,7 @@ class Corpus():
                     idx = lengths >= len(word) - 3
                     idx &= lengths <= len(word) + 3
                     sel = choices[idx]
-                    d = damerau_levenshtein_distance_withNPArray(word, sel)
+                    d = damerau_levenshtein_distance_ndarray(word, sel)
                     choice = np.array(keys_raw)[idx][np.argmin(d)]
                     # choice = difflib.get_close_matches(word, choices)[0]
                     vector = model[choice]
