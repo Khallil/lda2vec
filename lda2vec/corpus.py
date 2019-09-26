@@ -573,6 +573,7 @@ class Corpus():
                     print('******** word **********')
                     print(word)
                     print('******** sel **********')
+                    print(type(sel))
                     print(sel)
                     exit(0)
                     d = damerau_levenshtein_distance_ndarray(word, sel)
