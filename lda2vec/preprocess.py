@@ -1,4 +1,4 @@
-from spacy.lang.en import English
+from spacy.en import English
 from spacy.attrs import LOWER, LIKE_URL, LIKE_EMAIL
 
 import numpy as np
