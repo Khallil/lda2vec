@@ -532,8 +532,8 @@ class Corpus():
         True
         """
         n_words = len(self.compact_to_loose)
-        from gensim.models.word2vec import Word2Vec
-        model = Word2Vec.load_word2vec_format(filename, binary=True)
+        import gensim.models.keyedvectors as word2vec
+        model = word2vec.KeyedVectors.load_word2vec_format(filename, binary=True)
         n_dim = model.syn0.shape[1]
         data = np.random.normal(size=(n_words, n_dim)).astype('float32')
         data -= data.mean()
