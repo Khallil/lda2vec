@@ -88,7 +88,7 @@ class Corpus():
         uniques, counts = np.unique(np.ravel(loose_array), return_counts=True)
         msg = "Loose arrays cannot have elements below the values of special "
         msg += "tokens as these indices are reserved"
-        assert uniques.min() >= min(self.specials.values()), msg
+        assert uniques.min() >= min(list(self.specials.values())), msg
         for k, v in zip(uniques, counts):
             self.counts_loose[k] += v
 
@@ -101,12 +101,8 @@ class Corpus():
         order = np.argsort(counts)[::-1].astype('int32')
         keys, counts = keys[order], counts[order]
         # Add in the specials as a prefix to the other keys
-        print('****** self.specials *********')
-        print(self.specials)
-        print('****** self.specials.values *********')
-        print(self.specials.values())
 
-        specials = np.sort(self.specials.values())
+        specials = np.sort(list(self.specials.values()))
         keys = np.concatenate((specials, keys))
         empty = np.zeros(len(specials), dtype='int32')
         counts = np.concatenate((empty, counts))
