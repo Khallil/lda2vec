@@ -575,7 +575,6 @@ class Corpus():
                     print('******** sel **********')
                     print(type(sel))
                     print(sel)
-                    exit(0)
                     sel = sel.astype('str')
                     d = damerau_levenshtein_distance_ndarray(word, sel)
                     choice = np.array(keys_raw)[idx][np.argmin(d)]
