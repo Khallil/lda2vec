@@ -3,10 +3,8 @@ import numpy as np
 import difflib
 import pandas as pd
 
-try:
-    from pyxdameraulevenshtein import damerau_levenshtein_distance_withNPArray
-except ImportError:
-    pass
+from pyxdameraulevenshtein import damerau_levenshtein_distance_withNPArray
+
 
 
 class Corpus():
