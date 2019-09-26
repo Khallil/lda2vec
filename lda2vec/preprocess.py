@@ -87,6 +87,10 @@ def tokenize(texts, max_length, skip=-2, attr=LOWER, merge=False, nlp=None,
                         # Merge them into single tokens
                         ent.merge(ent.root.tag_, ent.text, ent.label_)
         dat = doc.to_array([attr, LIKE_EMAIL, LIKE_URL]).astype('int32')
+        print(' ******** dat.min() ********')
+        print(dat.min())
+        print(' ******** dat ********')
+        print(dat)
         if len(dat) > 0:
             dat = dat.astype('int32')
             msg = "Negative indices reserved for special tokens"
