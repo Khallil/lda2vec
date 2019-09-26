@@ -32,8 +32,6 @@ tokens, vocab = preprocess.tokenize(texts, max_length, merge=False,
 corpus = Corpus()
 # Make a ranked list of rare vs frequent words
 corpus.update_word_count(tokens)
-print('****** corpus ********')
-print(corpus)
 corpus.finalize()
 # The tokenization uses spaCy indices, and so may have gaps
 # between indices for words that aren't present in our dataset.
