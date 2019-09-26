@@ -18,7 +18,7 @@ from nslda import NSLDA
 
 gpu_id = int(os.getenv('CUDA_GPU', 0))
 cuda.get_device(gpu_id).use()
-print "Using GPU " + str(gpu_id)
+print("Using GPU " + str(gpu_id))
 
 vocab = pickle.load(open('../data/vocab.pkl', 'r'))
 corpus = pickle.load(open('../data/corpus.pkl', 'r'))
@@ -42,7 +42,7 @@ words = corpus.word_list(vocab)[:n_vocab]
 
 model = NSLDA(counts, n_docs, n_topics, n_units, n_vocab)
 if os.path.exists('nslda.hdf5'):
-    print "Reloading from saved"
+    print("Reloading from saved")
     serializers.load_hdf5("nslda.hdf5", model)
 model.to_gpu()
 optimizer = O.Adam()
@@ -73,7 +73,7 @@ for epoch in range(50000000):
         rate = batchsize / dt
         logs = dict(rec=float(rec.data), epoch=epoch, j=j,
                     ld=float(ld.data), rate=rate)
-        print msg.format(**logs)
+        print(msg.format(**logs))
         j += 1
     if epoch % 100 == 0:
         serializers.save_hdf5("nslda.hdf5", model)

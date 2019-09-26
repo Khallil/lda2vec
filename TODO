@@ -9,7 +9,7 @@ Add an example script with HN with doc id, client id, and predicted score
 Add super simple explanatory models
 Remove spacy dep
 Change EmbedMixture naming to possible values and n latent factors
-Print out topics while training
+print(out topics while training)
 Add doctets to lda2vec main classes
 Randomize chunking order on fit
 Add loss tracking and reporting classes to code
@@ -81,7 +81,7 @@ Done:
     Change component naming to 'categorical feature'
     Add linear layers between input latent and output context
     Merge skipgram branch
-    Add topic numbers to topic print out
+    Add topic numbers to topic print(out)
     Try higher importance to the prior
     Change prob model to just model prob of word in topic
     Add word dropout

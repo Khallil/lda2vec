@@ -87,7 +87,7 @@ def prepare_topics(weights, factors, word_vectors, vocab, temperature=1.0,
 
 
 def print_top_words_per_topic(data, top_n=10, do_print=True):
-    """ Given a pyLDAvis data array, print out the top words in every topic.
+    """ Given a pyLDAvis data array, print(out the top words in every topic.)
 
     Arguments
     ---------
@@ -103,7 +103,7 @@ def print_top_words_per_topic(data, top_n=10, do_print=True):
         top_words = [data['vocab'][i].strip().replace(' ', '_') for i in top]
         msg = ' '.join(top_words)
         if do_print:
-            print prefix + msg
+            print(prefix + msg)
         lists.append(top_words)
     return lists
 
