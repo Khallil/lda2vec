@@ -3,9 +3,7 @@ import numpy as np
 import difflib
 import pandas as pd
 
-from pyxdameraulevenshtein import damerau_levenshtein_distance_withNPArray
-
-
+from pyxdameraulevenshtein import damerau_levenshtein_distance_ndarray
 
 class Corpus():
     _keys_frequency = None
