@@ -80,7 +80,7 @@ class Corpus():
         >>> corpus.update_word_count(np.arange(10))
         >>> corpus.update_word_count(np.arange(8))
         >>> corpus.counts_loose[0]
-        2
+        2 
         >>> corpus.counts_loose[9]
         1
         """
@@ -101,6 +101,11 @@ class Corpus():
         order = np.argsort(counts)[::-1].astype('int32')
         keys, counts = keys[order], counts[order]
         # Add in the specials as a prefix to the other keys
+        print('****** self.specials *********')
+        print(self.specials)
+        print('****** self.specials.values *********')
+        print(self.specials.values())
+
         specials = np.sort(self.specials.values())
         keys = np.concatenate((specials, keys))
         empty = np.zeros(len(specials), dtype='int32')
