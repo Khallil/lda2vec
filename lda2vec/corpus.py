@@ -568,7 +568,7 @@ class Corpus():
                     break
             if vector is None:
                 try:
-                    word = unicode(word)
+                    word = str(word)
                     idx = lengths >= len(word) - 3
                     idx &= lengths <= len(word) + 3
                     sel = choices[idx]
