@@ -75,7 +75,7 @@ for epoch in range(50000000):
         rate = batchsize / dt
         logs = dict(rec=float(rec.data), epoch=epoch, j=j,
                     ld=float(ld.data), rate=rate)
-        print(msg.format(**logs))
+        # print(msg.format(**logs))
         j += 1
     if epoch % 100 == 0:
         serializers.save_hdf5("lda.hdf5", model)

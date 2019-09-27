@@ -570,17 +570,11 @@ class Corpus():
                     idx = lengths >= len(word) - 3
                     idx &= lengths <= len(word) + 3
                     sel = choices[idx]
-                    print('******** word **********')
-                    print(word)
-                    print('******** sel **********')
-                    print(type(sel))
-                    print(sel)
                     sel = sel.astype('str')
                     d = damerau_levenshtein_distance_ndarray(word, sel)
                     choice = np.array(keys_raw)[idx][np.argmin(d)]
                     # choice = difflib.get_close_matches(word, choices)[0]
                     vector = model[choice]
-                    print(compact, word, ' --> ', choice)
                 except IndexError:
                     pass
             if vector is None:

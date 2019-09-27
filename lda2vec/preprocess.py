@@ -101,7 +101,6 @@ def tokenize(texts, max_length, skip=-2, attr=LOWER, merge=False, nlp=None,
     vocab[skip] = '<SKIP>'
     return data, vocab
 
-
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
