@@ -60,7 +60,7 @@ for epoch in range(50000000):
         print_top_words_per_topic(d)
     for (ids, batch) in utils.chunks(batchsize, np.arange(bow.shape[0]), bow):
         t0 = time.time()
-        optimizer.zero_grads()
+        optimizer.zerograds()
         rec, ld = model.forward(ids, batch)
         l = rec + ld
         l.backward()

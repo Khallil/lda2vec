@@ -104,7 +104,7 @@ for epoch in range(200):
     np.savez('topics.pyldavis', **data)
     for d, f in utils.chunks(batchsize, doc_ids, flattened):
         t0 = time.time()
-        optimizer.zero_grads()
+        optimizer.zerograds()
         l = model.fit_partial(d.copy(), f.copy())
         prior = model.prior()
         loss = prior * fraction

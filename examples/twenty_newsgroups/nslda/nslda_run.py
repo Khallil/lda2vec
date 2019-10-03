@@ -58,7 +58,7 @@ for epoch in range(50000000):
     print_top_words_per_topic(d)
     for (doc_ids, flat) in utils.chunks(batchsize, doc_id, flattened):
         t0 = time.time()
-        optimizer.zero_grads()
+        optimizer.zerograds()
         rec, ld = model.forward(doc_ids, flat)
         l = rec + ld * fraction * strength
         l.backward()

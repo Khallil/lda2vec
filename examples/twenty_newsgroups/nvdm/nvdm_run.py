@@ -45,7 +45,7 @@ for epoch in range(500):
     for (batch,) in utils.chunks(batchsize, bow):
         t0 = time.time()
         rec, kl = model.observe(batch)
-        optimizer.zero_grads()
+        optimizer.zerograds()
         l = rec + kl
         l.backward()
         optimizer.update()
