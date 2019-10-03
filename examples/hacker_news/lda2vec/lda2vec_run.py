@@ -99,7 +99,7 @@ for epoch in range(5000):
     np.savez('topics.author.pyldavis', **ta)
     for s, a, f in utils.chunks(batchsize, story_id, author_id, flattened):
         t0 = time.time()
-        optimizer.zerograds()
+        model.cleargrads()
         l = model.fit_partial(s.copy(), a.copy(), f.copy())
         prior = model.prior()
         loss = prior * fraction
