@@ -24,7 +24,7 @@ texts = df['text'].tolist()
 #     return ' '.join(w for w in line.split() if not any(t in w for t in bad))
 
 # Preprocess data
-max_length = 10000   # Limit of 10k words per document
+max_length = 200   # Limit of 10k words per document
 # Convert to unicode (spaCy only works with unicode)
 # texts = [str(clean(d)) for d in texts]
 tokens, vocab = preprocess.tokenize(texts, max_length, merge=False,
