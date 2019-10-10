@@ -15,7 +15,7 @@ from lda2vec import preprocess, Corpus
 logging.basicConfig()
 
 # Get NewsBing data
-df = pd.read_csv('newsbing_clean.csv')
+df = pd.read_csv('newsbing_small.csv')
 texts = df['text'].tolist()
 # Remove tokens with these substrings
 # bad = set(["ax>", '`@("', '---', '===', '^^^'])
